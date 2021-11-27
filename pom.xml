@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>st-platform</artifactId>
+        <groupId>com.saite</groupId>
+        <version>1.0.6</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tk-framework</artifactId>
+
+    <packaging>pom</packaging>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <modules>
+        <module>tk-starter-database</module>
+        <module>tk-starter-log</module>
+        <module>tk-starter-redis</module>
+        <module>tk-starter-swagger</module>
+        <module>tk-starter-loadbalancer</module>
+        <module>tk-starter-sentinel</module>
+        <module>tk-starter-excel</module>
+        <module>tk-starter-notify</module>
+        <module>tk-starter-feign</module>
+    </modules>
+</project>

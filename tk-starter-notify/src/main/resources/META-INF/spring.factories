@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.thinklog.notify.config.NotifyAutoConfigure,\
+net.thinklog.feign.config.AsyncExecutorConfig,\
+net.thinklog.notify.config.NotifyTaskAutoConfig,\
+net.thinklog.notify.service.FeignNotifyService,\
+net.thinklog.notify.listener.EventNotifyListener

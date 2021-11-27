@@ -1,0 +1,10 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.thinklog.feign.config.WebMvcConfig,\
+net.thinklog.feign.config.FeignOnlyScanRestControllerConfig,\
+net.thinklog.feign.config.FeignRequestInterceptor,\
+net.thinklog.feign.config.FeignResultDecoder,\
+net.thinklog.feign.config.FeignExceptionConfig,\
+net.thinklog.feign.config.DefaultFeignAutoConfigure,\
+net.thinklog.feign.service.fallback.UserBaseFeignRpcServiceFallBack,\
+net.thinklog.feign.service.RestTemplateService,\
+net.thinklog.feign.resolver.UserContextHolderAspect

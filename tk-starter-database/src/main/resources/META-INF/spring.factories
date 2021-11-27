@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.thinklog.database.config.TenantAutoConfigure,\
+net.thinklog.database.config.MybatisPlusAutoConfigure,\
+net.thinklog.database.config.DruidConfigure

@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+net.thinklog.redis.RedisAutoConfigure,\
+net.thinklog.redis.lock.RedissonDistributedLock,\
+net.thinklog.redis.template.RedisRepository,\
+net.thinklog.redis.template.CacheManagerUtil
