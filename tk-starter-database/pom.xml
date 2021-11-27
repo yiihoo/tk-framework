@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.saite</groupId>
-            <artifactId>st-common</artifactId>
+            <artifactId>tk-starter-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -35,10 +35,6 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.saite</groupId>
-            <artifactId>tk-starter-redis</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,10 +1,10 @@
 package net.thinklog.feign.config;
 
 import cn.hutool.core.codec.Base64;
-import com.saite.common.config.AuthConstant;
-import com.saite.common.exception.ApiException;
-import com.saite.common.kit.JsonKit;
-import com.saite.common.kit.StrKit;
+import net.thinklog.common.config.AuthConstant;
+import net.thinklog.common.exception.ApiException;
+import net.thinklog.common.kit.JsonKit;
+import net.thinklog.common.kit.StrKit;
 import feign.FeignException;
 import feign.Response;
 import feign.Util;

@@ -1,9 +1,9 @@
 package net.thinklog.redis.lock;
 
-import com.saite.common.config.BaseConstant;
-import com.saite.common.exception.LockException;
-import com.saite.common.lock.DistributedLock;
-import com.saite.common.lock.ZLock;
+import net.thinklog.common.config.BaseConstant;
+import net.thinklog.common.exception.LockException;
+import net.thinklog.common.lock.DistributedLock;
+import net.thinklog.common.lock.DLock;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -23,30 +23,30 @@ public class RedissonDistributedLock implements DistributedLock {
     @Resource
     private RedissonClient redissonClient;
 
-    private ZLock getLock(String key, boolean isFair) {
+    private DLock getLock(String key, boolean isFair) {
         RLock lock;
         if (isFair) {
             lock = redissonClient.getFairLock(BaseConstant.LOCK_KEY_PREFIX + key);
         } else {
             lock = redissonClient.getLock(BaseConstant.LOCK_KEY_PREFIX + key);
         }
-        return new ZLock(lock, this);
+        return new DLock(lock, this);
     }
 
     @Override
-    public ZLock lock(String key, long leaseTime, TimeUnit unit, boolean isFair) {
-        ZLock zLock = getLock(key, isFair);
-        RLock lock = (RLock) zLock.getLock();
+    public DLock lock(String key, long leaseTime, TimeUnit unit, boolean isFair) {
+        DLock dLock = getLock(key, isFair);
+        RLock lock = (RLock) dLock.getLock();
         lock.lock(leaseTime, unit);
-        return zLock;
+        return dLock;
     }
 
     @Override
-    public ZLock tryLock(String key, long waitTime, long leaseTime, TimeUnit unit, boolean isFair) throws InterruptedException {
-        ZLock zLock = getLock(key, isFair);
-        RLock lock = (RLock) zLock.getLock();
+    public DLock tryLock(String key, long waitTime, long leaseTime, TimeUnit unit, boolean isFair) throws InterruptedException {
+        DLock dLock = getLock(key, isFair);
+        RLock lock = (RLock) dLock.getLock();
         if (lock.tryLock(waitTime, leaseTime, unit)) {
-            return zLock;
+            return dLock;
         }
         return null;
     }

@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.saite</groupId>
-            <artifactId>st-common</artifactId>
+            <artifactId>tk-starter-common</artifactId>
         </dependency>
         <!--redis必须用这个包-->
         <dependency>

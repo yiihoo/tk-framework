@@ -1,6 +1,6 @@
 package net.thinklog.feign.service;
 
-import com.saite.common.bean.model.user.AppUser;
+import net.thinklog.common.bean.model.user.AppUser;
 import net.thinklog.feign.service.fallback.UserBaseFeignRpcServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

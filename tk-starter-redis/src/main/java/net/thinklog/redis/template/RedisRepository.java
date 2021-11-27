@@ -1,6 +1,6 @@
 package net.thinklog.redis.template;
 
-import com.saite.common.config.BaseConstant;
+import net.thinklog.common.config.BaseConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.connection.RedisClusterNode;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

@@ -1,10 +1,9 @@
 package net.thinklog.feign.service.fallback;
 
-import com.saite.common.bean.model.user.AppUser;
+import net.thinklog.common.bean.model.user.AppUser;
 import lombok.extern.slf4j.Slf4j;
 import net.thinklog.feign.service.UserBaseFeignRpcService;
 import org.springframework.cloud.openfeign.FallbackFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * @author DELL

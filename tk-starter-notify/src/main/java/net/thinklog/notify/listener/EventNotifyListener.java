@@ -1,7 +1,7 @@
 package net.thinklog.notify.listener;
 
 import com.alibaba.fastjson.JSONObject;
-import com.saite.common.kit.StrKit;
+import net.thinklog.common.kit.StrKit;
 import lombok.extern.slf4j.Slf4j;
 import net.thinklog.feign.service.RestTemplateService;
 import net.thinklog.notify.bean.EventNotifyParam;

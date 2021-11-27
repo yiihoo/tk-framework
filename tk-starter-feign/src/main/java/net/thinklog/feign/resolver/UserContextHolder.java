@@ -1,8 +1,8 @@
 package net.thinklog.feign.resolver;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
-import com.saite.common.bean.dto.LoginUserDTO;
-import com.saite.common.bean.enums.PlatformEnum;
+import net.thinklog.common.bean.dto.LoginUserDTO;
+import net.thinklog.common.bean.enums.PlatformEnum;
 
 /**
  * 用户holder

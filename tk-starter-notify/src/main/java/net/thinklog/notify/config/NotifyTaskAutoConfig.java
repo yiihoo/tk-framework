@@ -2,7 +2,7 @@ package net.thinklog.notify.config;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.date.DateUtil;
-import com.saite.common.kit.DateTimeKit;
+import net.thinklog.common.kit.DateTimeKit;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.thinklog.feign.service.RestTemplateService;

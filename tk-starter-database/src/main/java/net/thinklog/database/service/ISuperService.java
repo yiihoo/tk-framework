@@ -2,7 +2,7 @@ package net.thinklog.database.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.saite.common.lock.DistributedLock;
+import net.thinklog.common.lock.DistributedLock;
 
 /**
  * service接口父类

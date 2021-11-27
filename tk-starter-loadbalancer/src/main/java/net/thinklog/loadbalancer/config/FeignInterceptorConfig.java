@@ -1,11 +1,11 @@
 package net.thinklog.loadbalancer.config;
 
 import cn.hutool.core.util.StrUtil;
-import com.saite.common.bean.enums.PlatformEnum;
-import com.saite.common.config.AuthConstant;
-import com.saite.common.context.PlatformContextHolder;
-import com.saite.common.context.TenantContextHolder;
-import com.saite.common.kit.StrKit;
+import net.thinklog.common.bean.enums.PlatformEnum;
+import net.thinklog.common.config.AuthConstant;
+import net.thinklog.common.context.PlatformContextHolder;
+import net.thinklog.common.context.TenantContextHolder;
+import net.thinklog.common.kit.StrKit;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 

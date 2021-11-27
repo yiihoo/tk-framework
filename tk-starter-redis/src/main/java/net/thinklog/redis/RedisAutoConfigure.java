@@ -1,6 +1,6 @@
 package net.thinklog.redis;
 
-import com.saite.common.config.BaseConstant;
+import net.thinklog.common.config.BaseConstant;
 import net.thinklog.redis.properties.CacheManagerProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;

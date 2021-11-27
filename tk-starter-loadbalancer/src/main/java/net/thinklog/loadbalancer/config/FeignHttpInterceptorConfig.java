@@ -1,8 +1,8 @@
 package net.thinklog.loadbalancer.config;
 
-import com.saite.common.config.AuthConstant;
-import com.saite.common.config.BaseConstant;
-import com.saite.common.kit.StrKit;
+import net.thinklog.common.config.AuthConstant;
+import net.thinklog.common.config.BaseConstant;
+import net.thinklog.common.kit.StrKit;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.request.RequestContextHolder;

@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>jar</packaging>
-
     <artifactId>tk-starter-loadbalancer</artifactId>
+
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.saite</groupId>
-            <artifactId>st-common</artifactId>
+            <artifactId>tk-starter-common</artifactId>
         </dependency>
 
         <dependency>

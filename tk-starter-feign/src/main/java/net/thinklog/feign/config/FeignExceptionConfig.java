@@ -1,8 +1,8 @@
 package net.thinklog.feign.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.saite.common.handler.DiyExceptionChainHandler;
-import com.saite.common.handler.DiyExceptionHandler;
+import net.thinklog.common.handler.DiyExceptionChainHandler;
+import net.thinklog.common.handler.DiyExceptionHandler;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 

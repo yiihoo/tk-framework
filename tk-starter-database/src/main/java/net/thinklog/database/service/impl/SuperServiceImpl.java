@@ -10,10 +10,10 @@ import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import net.thinklog.database.service.ISuperService;
-import com.saite.common.exception.IdempotencyException;
-import com.saite.common.exception.LockException;
-import com.saite.common.lock.DistributedLock;
-import com.saite.common.lock.ZLock;
+import net.thinklog.common.exception.IdempotencyException;
+import net.thinklog.common.exception.LockException;
+import net.thinklog.common.lock.DistributedLock;
+import net.thinklog.common.lock.DLock;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -36,7 +36,7 @@ public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M,
             throw new LockException("lockKey is null");
         }
         try (
-                ZLock lock = locker.tryLock(lockKey, 10, 60, TimeUnit.SECONDS);
+                DLock lock = locker.tryLock(lockKey, 10, 60, TimeUnit.SECONDS);
                 ) {
             if (lock != null) {
                 //判断记录是否已存在

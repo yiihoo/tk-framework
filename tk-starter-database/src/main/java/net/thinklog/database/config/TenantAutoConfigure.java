@@ -1,8 +1,8 @@
 package net.thinklog.database.config;
 
 import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
-import com.saite.common.bean.properties.TenantProperties;
-import com.saite.common.context.TenantContextHolder;
+import net.thinklog.common.bean.properties.TenantProperties;
+import net.thinklog.common.context.TenantContextHolder;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.NullValue;
 import net.sf.jsqlparser.expression.StringValue;

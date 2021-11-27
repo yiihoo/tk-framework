@@ -2,10 +2,10 @@ package net.thinklog.feign.resolver;
 
 import cn.hutool.core.codec.Base64;
 import com.alibaba.fastjson.JSONObject;
-import com.saite.common.bean.dto.LoginUserDTO;
-import com.saite.common.config.AuthConstant;
-import com.saite.common.context.PlatformContextHolder;
-import com.saite.common.kit.StrKit;
+import net.thinklog.common.bean.dto.LoginUserDTO;
+import net.thinklog.common.config.AuthConstant;
+import net.thinklog.common.context.PlatformContextHolder;
+import net.thinklog.common.kit.StrKit;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
