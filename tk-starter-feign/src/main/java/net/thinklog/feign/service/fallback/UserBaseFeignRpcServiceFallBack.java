@@ -18,12 +18,6 @@ public class UserBaseFeignRpcServiceFallBack implements FallbackFactory<UserBase
                 log.error("通过ID获取用户异常：{}", id, cause);
                 return null;
             }
-
-            @Override
-            public AppUser getByMobile(String mobile) {
-                log.error("通过Mobile获取用户异常：{}", mobile, cause);
-                return null;
-            }
         };
     }
 }

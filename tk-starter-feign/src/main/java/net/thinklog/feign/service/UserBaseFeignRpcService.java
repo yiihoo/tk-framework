@@ -19,10 +19,4 @@ public interface UserBaseFeignRpcService {
     @PostMapping("/get-by-id")
     AppUser getById(@RequestParam("id") Long id);
 
-    /**
-     * 获取单个用户
-     */
-    @PostMapping("/get-by-mobile")
-    AppUser getByMobile(@RequestParam("mobile") String mobile);
-
 }
