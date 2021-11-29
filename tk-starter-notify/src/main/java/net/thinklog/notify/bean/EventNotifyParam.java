@@ -16,5 +16,6 @@ import java.io.Serializable;
 public class EventNotifyParam implements Serializable {
     private Long id;
     private String name;
+    private String title;
     private Object data;
 }

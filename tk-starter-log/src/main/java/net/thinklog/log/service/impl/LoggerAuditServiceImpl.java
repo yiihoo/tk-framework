@@ -1,9 +1,10 @@
 package net.thinklog.log.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import net.thinklog.log.model.Audit;
 import net.thinklog.log.service.IAuditService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import net.thinklog.log.model.Audit;
+import org.springframework.stereotype.Service;
 
 import java.time.format.DateTimeFormatter;
 
@@ -15,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 
  */
 @Slf4j
+@Service
 @ConditionalOnProperty(name = "tk.audit-log.log-type", havingValue = "logger", matchIfMissing = true)
 public class LoggerAuditServiceImpl implements IAuditService {
     private static final String MSG_PATTERN = "{}|{}|{}|{}|{}|{}|{}|{}";

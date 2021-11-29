@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -13,6 +14,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 2021/7/30 23:46
  */
 @EnableAsync
+@Component
 public class AsyncExecutorConfig implements AsyncConfigurer {
     public static final String ASYNC_NAME = "tc-async-executor";
     public static final String ASYNC_PREFIX = "tc-async-executor-";

@@ -3,6 +3,7 @@ package net.thinklog.log.trace;
 import net.thinklog.log.properties.TraceProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -18,8 +19,8 @@ import java.io.IOException;
  *
  * @author azhao
  * @date 2020/10/14
-
  */
+@Component
 @ConditionalOnClass(value = {HttpServletRequest.class, OncePerRequestFilter.class})
 @Order(value = MDCTraceUtils.FILTER_ORDER)
 public class WebTraceFilter extends OncePerRequestFilter {
@@ -36,14 +37,16 @@ public class WebTraceFilter extends OncePerRequestFilter {
                                     FilterChain filterChain) throws IOException, ServletException {
         try {
             String traceId = request.getHeader(MDCTraceUtils.TRACE_ID_HEADER);
-            if (StringUtils.isEmpty(traceId)) {
-                MDCTraceUtils.addTraceId();
+            String spanId = request.getHeader(MDCTraceUtils.SPAN_ID_HEADER);
+
+            if (StringUtils.hasText(traceId)) {
+                MDCTraceUtils.addTrace();
             } else {
-                MDCTraceUtils.putTraceId(traceId);
+                MDCTraceUtils.putTrace(traceId, spanId);
             }
             filterChain.doFilter(request, response);
         } finally {
-            MDCTraceUtils.removeTraceId();
+            MDCTraceUtils.removeTrace();
         }
     }
 }

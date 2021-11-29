@@ -2,15 +2,16 @@ package net.thinklog.log.service.impl;
 
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
+import net.thinklog.log.model.Audit;
+import net.thinklog.log.properties.LogDbProperties;
 import net.thinklog.log.service.IAuditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import net.thinklog.log.model.Audit;
-import net.thinklog.log.properties.LogDbProperties;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
@@ -23,6 +24,7 @@ import javax.sql.DataSource;
 
  */
 @Slf4j
+@Service
 @ConditionalOnProperty(name = "tk.audit-log.log-type", havingValue = "db")
 @ConditionalOnClass(JdbcTemplate.class)
 public class DbAuditServiceImpl implements IAuditService {

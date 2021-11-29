@@ -1,6 +1,9 @@
 package net.thinklog.log.aspect;
 
 import lombok.extern.slf4j.Slf4j;
+import net.thinklog.log.annotation.AuditLog;
+import net.thinklog.log.model.Audit;
+import net.thinklog.log.properties.AuditLogProperties;
 import net.thinklog.log.service.IAuditService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,11 +16,9 @@ import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import net.thinklog.log.annotation.AuditLog;
-import net.thinklog.log.model.Audit;
-import net.thinklog.log.properties.AuditLogProperties;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
@@ -31,6 +32,7 @@ import java.time.LocalDateTime;
  */
 @Slf4j
 @Aspect
+@Component
 @ConditionalOnClass({HttpServletRequest.class, RequestContextHolder.class})
 public class AuditLogAspect {
     @Value("${spring.application.name}")

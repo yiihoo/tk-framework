@@ -1,22 +1,26 @@
 package net.thinklog.log.trace;
 
 import feign.RequestInterceptor;
+import net.thinklog.log.properties.TraceProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
-import net.thinklog.log.properties.TraceProperties;
 
 import javax.annotation.Resource;
 
 /**
  * feign拦截器，传递traceId
  *
- * @author azhao
+ * @author zlt
  * @date 2021/1/28
-
+ * <p>
+ * Blog: https://zlt2000.gitee.io
+ * Github: https://github.com/zlt2000
  */
+@Configuration
 @ConditionalOnClass(value = {RequestInterceptor.class})
-public class FeignTraceInterceptor {
+public class FeignTraceConfig {
     @Resource
     private TraceProperties traceProperties;
 
@@ -26,8 +30,10 @@ public class FeignTraceInterceptor {
             if (traceProperties.getEnable()) {
                 //传递日志traceId
                 String traceId = MDCTraceUtils.getTraceId();
-                if (!StringUtils.isEmpty(traceId)) {
+                if (!StringUtils.hasText(traceId)) {
+                    String spanId = MDCTraceUtils.getSpanId();
                     template.header(MDCTraceUtils.TRACE_ID_HEADER, traceId);
+                    template.header(MDCTraceUtils.SPAN_ID_HEADER, spanId);
                 }
             }
         };

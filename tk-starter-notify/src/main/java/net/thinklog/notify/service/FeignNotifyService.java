@@ -1,20 +1,20 @@
 package net.thinklog.notify.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.zaxxer.hikari.HikariDataSource;
+import lombok.extern.slf4j.Slf4j;
 import net.thinklog.common.config.BaseConstant;
 import net.thinklog.common.kit.DateTimeKit;
 import net.thinklog.common.kit.StrKit;
-import com.zaxxer.hikari.HikariDataSource;
-import lombok.extern.slf4j.Slf4j;
-import net.thinklog.notify.bean.NotifyParam;
 import net.thinklog.feign.config.AsyncExecutorConfig;
+import net.thinklog.notify.bean.NotifyParam;
 import net.thinklog.notify.properties.NotifyDbProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
@@ -31,7 +31,7 @@ import java.util.Objects;
  * @date 2020/2/8
  */
 @Slf4j
-@ConditionalOnProperty(name = "tk.notify.type", havingValue = "db")
+@Component
 @ConditionalOnClass(JdbcTemplate.class)
 public class FeignNotifyService {
     /**

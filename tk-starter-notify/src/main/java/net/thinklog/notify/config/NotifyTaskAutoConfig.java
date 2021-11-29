@@ -11,6 +11,7 @@ import net.thinklog.notify.service.FeignNotifyService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
@@ -19,10 +20,10 @@ import java.util.List;
  * @author azhao
  * 2021/7/30 23:46
  */
+@Slf4j
 @EnableScheduling
 @AllArgsConstructor
-@Slf4j
-@ConditionalOnBean(FeignNotifyService.class)
+@Component
 public class NotifyTaskAutoConfig {
     private final FeignNotifyService feignNotifyService;
     private final RestTemplateService restTemplateService;
