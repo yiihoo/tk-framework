@@ -17,12 +17,12 @@ public abstract class RegExpKit {
     /**
      * 匹配非负整数（正整数 + 0）
      */
-    public final static String UNSIGNED = "^\\d+$";
+    public final static String UNSIGNED = "^\\d{1,11}$";
 
     /**
      * 匹配整数
      */
-    public final static String INTEGER = "^-?\\d+$";
+    public final static String INTEGER = "^-?\\d{1,11}$";
     /**
      * 时间日期匹配
      */

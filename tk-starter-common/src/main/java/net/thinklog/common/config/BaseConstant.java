@@ -33,4 +33,5 @@ public class BaseConstant {
      * 默认用户名
      */
     public static final String DEFAULT_USER_NAME = "未设置";
+    public static final Long PLATFORM_ID = 1L;
 }

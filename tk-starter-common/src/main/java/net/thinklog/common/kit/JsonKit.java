@@ -185,10 +185,10 @@ public class JsonKit {
         if (StrKit.isBlank(json)) {
             return null;
         }
-        if (type.getTypeName().equals("java.lang.String")) {
+        if ("java.lang.String".equals(type.getTypeName())) {
             return json;
         }
-        if (type.getTypeName().equals("java.lang.Integer")) {
+        if ("java.lang.Integer".equals(type.getTypeName())) {
             return Convert.toInt(json);
         }
         try {

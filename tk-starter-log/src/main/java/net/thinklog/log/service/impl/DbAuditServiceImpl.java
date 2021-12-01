@@ -36,7 +36,7 @@ public class DbAuditServiceImpl implements IAuditService {
 
     public DbAuditServiceImpl(@Autowired(required = false) LogDbProperties logDbProperties, DataSource dataSource) {
         //优先使用配置的日志数据源，否则使用默认的数据源
-        if (logDbProperties != null && !StringUtils.isEmpty(logDbProperties.getJdbcUrl())) {
+        if (logDbProperties != null && StringUtils.hasText(logDbProperties.getJdbcUrl())) {
             dataSource = new HikariDataSource(logDbProperties);
         }
         this.jdbcTemplate = new JdbcTemplate(dataSource);
