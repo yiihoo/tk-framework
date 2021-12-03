@@ -63,7 +63,6 @@
         <module>tk-starter-notify</module>
         <module>tk-starter-feign</module>
     </modules>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
