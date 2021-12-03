@@ -158,7 +158,20 @@ public abstract class RegExpKit {
      * 大小写+特殊符号+数字+超过8位
      */
     public final static String PASSWORD = "^(?![A-Za-z0-9]+$)(?![a-z0-9\\W]+$)(?![A-Za-z\\W]+$)(?![A-Z0-9\\W]+$)[a-zA-Z0-9\\W]{8,}$";
+    /**
+     * 车牌号
+     */
+    public final static String TRUCK_NO = "^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$";
+    /**
+     * 车长
+     */
+    public final static String TRUCK_LENGTH = "(1.8|2.7|3.8|4.2|5|6.2|6.8|7.7|8.2|8.7|9.6|11.7|12.5|13|13.75|15|16|17.5)";
+    /**
+     * 车型
+     */
+    public final static String TRUCK_TYPE = "(平板|高栏|厢式|危险品|自卸|冷藏|保温|高低板|面包车|棉被车|爬梯车|飞翼车)";
 
+    public final static String LICENSE_NO = "^[0-9A-Z]{15,24}$";
     /**
      * 正则验证
      *
@@ -178,10 +191,6 @@ public abstract class RegExpKit {
 
     /**
      * 正则验证
-     *
-     * @param content 内容
-     * @param regExp  正则表达式
-     * @return boolean
      */
     public static boolean regExp(Object content, String regExp) {
         if (content == null) {
@@ -192,9 +201,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否非零
-     *
-     * @param o 内容
-     * @return boolean
      */
     public static boolean notZero(Object o) {
         if (!isMoney(o)) {
@@ -205,9 +211,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为0
-     *
-     * @param o
-     * @return boolean
      */
     public static boolean isZero(Object o) {
         return !regExp(o, "[1-9]+");
@@ -215,9 +218,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为非零数字
-     *
-     * @param o
-     * @return boolean
      */
     public static boolean isId(Object o) {
         return regExp(o, UNSIGNED_LONG_NO_ZERO);
@@ -225,9 +225,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为密码6个数字
-     *
-     * @param o 内容
-     * @return boolean
      */
     public static boolean isPwd(Object o) {
         return regExp(o, "^\\d{6}$");
@@ -235,9 +232,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为手机号
-     *
-     * @param o
-     * @return boolean
      */
     public static boolean isMobile(Object o) {
         return regExp(o, MOBILE);
@@ -245,9 +239,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为图片
-     *
-     * @param o
-     * @return boolean
      */
     public static boolean isImage(Object o) {
         return regExp(o, IMAGE);
@@ -255,9 +246,6 @@ public abstract class RegExpKit {
 
     /**
      * 是否为中文姓名2-4个汉字
-     *
-     * @param o
-     * @return boolean
      */
     public static boolean isCnName(Object o) {
         return RegExpKit.regExp(o, "^[\\u4e00-\\u9fa5]{2,4}$");
@@ -267,4 +255,11 @@ public abstract class RegExpKit {
         return RegExpKit.regExp(o, MONEY);
     }
 
+
+    /**
+     * 是否为经纬度
+     */
+    public static boolean isLocate(Object o) {
+        return RegExpKit.regExp(o, LOCATE);
+    }
 }
