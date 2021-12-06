@@ -17,7 +17,7 @@ public abstract class RegExpKit {
     /**
      * 匹配非负整数（正整数 + 0）
      */
-    public final static String UNSIGNED = "^\\d{1,11}$";
+    public final static String UNSIGNED = "^\\d{1,20}$";
 
     /**
      * 匹配整数

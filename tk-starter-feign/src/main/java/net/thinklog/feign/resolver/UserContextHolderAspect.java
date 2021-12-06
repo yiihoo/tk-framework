@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 @Aspect
 @Slf4j
 public class UserContextHolderAspect implements Ordered {
-    @Around("(execution(* *.controller..*(..)))")
+    @Around("(execution(* *..controller..*(..)))")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         try {
             ServletRequestAttributes attributes = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes());
