@@ -1,8 +1,9 @@
 package net.thinklog.feign.resolver;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
+import net.thinklog.common.api.RestCode;
 import net.thinklog.common.bean.dto.LoginUserDTO;
-import net.thinklog.common.bean.enums.PlatformEnum;
+import net.thinklog.common.exception.Asserts;
 
 /**
  * 用户holder
@@ -21,7 +22,14 @@ public class UserContextHolder {
     }
 
     public static LoginUserDTO getUser() {
+        checkUser();
         return CONTEXT.get();
+    }
+
+    private static void checkUser() {
+        if (CONTEXT.get() == null) {
+            Asserts.fail(RestCode.UNAUTHORIZED);
+        }
     }
 
     public static void clear() {
@@ -29,16 +37,7 @@ public class UserContextHolder {
     }
 
     public static Long getUserId() {
-        if (CONTEXT.get() != null) {
-            return CONTEXT.get().getId() == null ? 0L : CONTEXT.get().getId();
-        }
-        return 0L;
-    }
-
-    public static Integer getPlatformId() {
-        if (CONTEXT.get() != null) {
-            return CONTEXT.get().getPlatformId() == null ? PlatformEnum.DEFAULT.getValue() : CONTEXT.get().getPlatformId();
-        }
-        return PlatformEnum.DEFAULT.getValue();
+        checkUser();
+        return CONTEXT.get().getId();
     }
 }
