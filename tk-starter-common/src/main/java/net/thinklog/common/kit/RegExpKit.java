@@ -172,6 +172,9 @@ public abstract class RegExpKit {
     public final static String TRUCK_TYPE = "(平板|高栏|厢式|危险品|自卸|冷藏|保温|高低板|面包车|棉被车|爬梯车|飞翼车)";
 
     public final static String LICENSE_NO = "^[0-9A-Z]{15,24}$";
+
+    public static final String BASE64_IMAGE = "^data:image/(png|jpg|jpeg|gif);base64,.+";
+
     /**
      * 正则验证
      *
