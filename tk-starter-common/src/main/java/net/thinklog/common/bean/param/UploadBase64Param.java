@@ -1,5 +1,6 @@
 package net.thinklog.common.bean.param;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import net.thinklog.common.kit.RegExpKit;
 import net.thinklog.common.validator.NotEmptyPattern;
@@ -14,8 +15,12 @@ import java.io.Serializable;
  */
 @Data
 public class UploadBase64Param implements Serializable {
-    @NotEmptyPattern(regexp = RegExpKit.BASE64_IMAGE, message = "图片格式错误")
+    @NotEmpty(message = "图片数据不能为空")
     private String data;
     @NotEmpty(message = "图片标题不能为空")
     private String title;
+    private Integer chunk;
+    private Integer chunks;
+    @JsonProperty("uni_name")
+    private String uniName;
 }
