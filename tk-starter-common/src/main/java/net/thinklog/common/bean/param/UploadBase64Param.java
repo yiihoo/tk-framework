@@ -2,8 +2,6 @@ package net.thinklog.common.bean.param;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import net.thinklog.common.kit.RegExpKit;
-import net.thinklog.common.validator.NotEmptyPattern;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
