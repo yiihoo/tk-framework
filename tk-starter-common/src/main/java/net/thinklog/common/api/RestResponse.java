@@ -27,7 +27,7 @@ public class RestResponse<T> implements Serializable {
     }
 
     public RestResponse(T data) {
-        new RestResponse<T>(RestCode.SUCCESS.getCode(), RestCode.SUCCESS.getMessage(), data);
+        new RestResponse<>(RestCode.SUCCESS.getCode(), RestCode.SUCCESS.getMessage(), data);
     }
 
     public boolean isOk() {
@@ -60,7 +60,7 @@ public class RestResponse<T> implements Serializable {
      * @param data 获取的数据
      */
     public static <T> RestResponse<T> success(T data) {
-        return new RestResponse<T>(RestCode.SUCCESS.getCode(), RestCode.SUCCESS.getMessage(), data);
+        return new RestResponse<>(RestCode.SUCCESS.getCode(), RestCode.SUCCESS.getMessage(), data);
     }
 
     /**
@@ -70,7 +70,7 @@ public class RestResponse<T> implements Serializable {
      * @param message 提示信息
      */
     public static <T> RestResponse<T> success(T data, String message) {
-        return new RestResponse<T>(RestCode.SUCCESS.getCode(), message, data);
+        return new RestResponse<>(RestCode.SUCCESS.getCode(), message, data);
     }
 
     /**
@@ -88,7 +88,7 @@ public class RestResponse<T> implements Serializable {
      * @param errorCode 错误码
      */
     public static <T> RestResponse<T> failed(ErrorCodeEnum errorCode, String msg) {
-        return new RestResponse<T>(errorCode, msg);
+        return new RestResponse<>(errorCode, msg);
     }
 
     /**
@@ -97,7 +97,7 @@ public class RestResponse<T> implements Serializable {
      * @param errorCode 错误码
      */
     public static <T> RestResponse<T> failed(IErrorCode errorCode) {
-        return new RestResponse<T>(errorCode.getCode(), errorCode.getMessage(), null);
+        return new RestResponse<>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
@@ -107,7 +107,7 @@ public class RestResponse<T> implements Serializable {
      * @param message   错误信息
      */
     public static <T> RestResponse<T> failed(IErrorCode errorCode, String message) {
-        return new RestResponse<T>(errorCode.getCode(), message, null);
+        return new RestResponse<>(errorCode.getCode(), message, null);
     }
 
     /**
@@ -116,7 +116,7 @@ public class RestResponse<T> implements Serializable {
      * @param message 提示信息
      */
     public static <T> RestResponse<T> failed(String message) {
-        return new RestResponse<T>(RestCode.FAILED.getCode(), message, null);
+        return new RestResponse<>(RestCode.FAILED.getCode(), message, null);
     }
 
     /**
@@ -139,21 +139,21 @@ public class RestResponse<T> implements Serializable {
      * @param message 提示信息
      */
     public static <T> RestResponse<T> validateFailed(String message) {
-        return new RestResponse<T>(RestCode.VALIDATE_FAILED.getCode(), message, null);
+        return new RestResponse<>(RestCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
      * 未登录返回结果
      */
     public static <T> RestResponse<T> unauthorized(T data) {
-        return new RestResponse<T>(RestCode.UNAUTHORIZED.getCode(), RestCode.UNAUTHORIZED.getMessage(), data);
+        return new RestResponse<>(RestCode.UNAUTHORIZED.getCode(), RestCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
      * 未授权返回结果
      */
     public static <T> RestResponse<T> forbidden(T data) {
-        return new RestResponse<T>(RestCode.FORBIDDEN.getCode(), RestCode.FORBIDDEN.getMessage(), data);
+        return new RestResponse<>(RestCode.FORBIDDEN.getCode(), RestCode.FORBIDDEN.getMessage(), data);
     }
 
     public Integer getCode() {
@@ -176,7 +176,7 @@ public class RestResponse<T> implements Serializable {
         return message;
     }
 
-    public RestResponse setMessage(String message) {
+    public RestResponse<T> setMessage(String message) {
         this.message = message;
         this.timestamp = System.currentTimeMillis();
         return this;
