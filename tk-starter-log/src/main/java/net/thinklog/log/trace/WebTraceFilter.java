@@ -38,7 +38,6 @@ public class WebTraceFilter extends OncePerRequestFilter {
         try {
             String traceId = request.getHeader(MDCTraceUtils.TRACE_ID_HEADER);
             String spanId = request.getHeader(MDCTraceUtils.SPAN_ID_HEADER);
-
             if (StringUtils.hasText(traceId)) {
                 MDCTraceUtils.addTrace();
             } else {

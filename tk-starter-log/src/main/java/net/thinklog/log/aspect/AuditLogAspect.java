@@ -32,7 +32,6 @@ import java.time.LocalDateTime;
  */
 @Slf4j
 @Aspect
-@Component
 @ConditionalOnClass({HttpServletRequest.class, RequestContextHolder.class})
 public class AuditLogAspect {
     @Value("${spring.application.name}")

@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
@@ -21,10 +20,8 @@ import javax.sql.DataSource;
  *
  * @author azhao
  * @date 2020/2/8
-
  */
 @Slf4j
-@Service
 @ConditionalOnProperty(name = "tk.audit-log.log-type", havingValue = "db")
 @ConditionalOnClass(JdbcTemplate.class)
 public class DbAuditServiceImpl implements IAuditService {

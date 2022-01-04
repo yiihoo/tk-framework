@@ -1,5 +1,7 @@
 org.springframework.context.ApplicationContextInitializer=\
 net.thinklog.log.config.TtlMDCAdapterInitializer
-
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-net.thinklog.log.LogAutoConfigure
+net.thinklog.log.LogAutoConfigure,\
+net.thinklog.log.aspect.AuditLogAspect,\
+net.thinklog.log.service.impl.DbAuditServiceImpl,\
+net.thinklog.log.service.impl.LoggerAuditServiceImpl

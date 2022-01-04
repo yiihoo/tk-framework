@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
  *
  * @author azhao
  * @date 2019/1/10
-
  */
 public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements ISuperService<T> {
     @Override
@@ -37,10 +36,10 @@ public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M,
         }
         try (
                 DLock lock = locker.tryLock(lockKey, 10, 60, TimeUnit.SECONDS);
-                ) {
+        ) {
             if (lock != null) {
                 //判断记录是否已存在
-                int count = super.count(countWrapper);
+                long count = super.count(countWrapper);
                 if (count == 0) {
                     return super.save(entity);
                 } else {

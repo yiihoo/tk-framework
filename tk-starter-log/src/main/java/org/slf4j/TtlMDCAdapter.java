@@ -21,7 +21,7 @@ public class TtlMDCAdapter implements MDCAdapter {
     private static final int WRITE_OPERATION = 1;
     private static final int MAP_COPY_OPERATION = 2;
 
-    private static TtlMDCAdapter mtcMDCAdapter;
+    private static final TtlMDCAdapter mtcMDCAdapter;
 
     /**
      * keeps track of the last operation performed

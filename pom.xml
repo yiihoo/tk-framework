@@ -22,14 +22,14 @@
         <skipTests>true</skipTests>
         <spring-cloud.version>2020.0.4</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-        <spring-boot.version>2.5.7</spring-boot.version>
+        <spring-boot.version>2.5.8</spring-boot.version>
         <redisson-starter.version>3.16.1</redisson-starter.version>
         <pagehelper.version>5.2.0</pagehelper.version>
         <druid.version>1.2.6</druid.version>
         <hutool.version>5.5.5</hutool.version>
         <mybatis.version>3.5.5</mybatis.version>
-        <mybatis-plus.version>3.4.3</mybatis-plus.version>
-        <mybatis-plus-dynamic-datasource.version>3.4.1</mybatis-plus-dynamic-datasource.version>
+        <mybatis-plus.version>3.5.0</mybatis-plus.version>
+        <mybatis-plus-dynamic-datasource.version>3.5.0</mybatis-plus-dynamic-datasource.version>
         <mysql-connector.version>8.0.20</mysql-connector.version>
         <jfinal.version>4.9.06</jfinal.version>
         <aliyun-oss.version>3.8.1</aliyun-oss.version>
@@ -62,6 +62,7 @@
         <module>tk-starter-excel</module>
         <module>tk-starter-notify</module>
         <module>tk-starter-feign</module>
+        <module>tk-starter-bean-searcher</module>
     </modules>
     <dependencies>
         <dependency>
@@ -186,6 +187,12 @@
                 <artifactId>tk-starter-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!--tk-bean-searcher-->
+            <dependency>
+                <groupId>net.thinklog</groupId>
+                <artifactId>tk-starter-bean-searcher</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--集成druid连接池-->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -246,12 +253,6 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-micro-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
-            </dependency>
-            <!--RocketMQ-->
-            <dependency>
-                <groupId>org.apache.rocketmq</groupId>
-                <artifactId>rocketmq-spring-boot-starter</artifactId>
-                <version>${rocketmq-spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jfinal</groupId>
