@@ -7,8 +7,9 @@ import java.util.regex.Pattern;
 
 /**
  * 字符串处理常用方法
+ * @author azhao
  */
-public abstract class RegExpKit {
+public class RegExpKit {
 
     /**
      * 数字分隔符
@@ -176,33 +177,6 @@ public abstract class RegExpKit {
     public static final String BASE64_IMAGE = "^data:image/(png|jpg|jpeg|gif);base64,.+";
 
     /**
-     * 正则验证
-     *
-     * @param content 内容
-     * @param regExp  正则表达式
-     * @return boolean
-     */
-    public static boolean regExp(String content, String regExp) {
-        if (content == null) {
-            return false;
-        }
-        Pattern pattern = Pattern.compile(regExp);
-        Matcher matcher = pattern.matcher(content);
-        return matcher.find();
-    }
-
-
-    /**
-     * 正则验证
-     */
-    public static boolean regExp(Object content, String regExp) {
-        if (content == null) {
-            return false;
-        }
-        return regExp(content.toString(), regExp);
-    }
-
-    /**
      * 是否非零
      */
     public static boolean notZero(Object o) {
@@ -217,6 +191,32 @@ public abstract class RegExpKit {
      */
     public static boolean isZero(Object o) {
         return !regExp(o, "[1-9]+");
+    }
+
+    /**
+     * 正则验证
+     */
+    public static boolean regExp(Object content, String regExp) {
+        if (content == null) {
+            return false;
+        }
+        return regExp(content.toString(), regExp);
+    }
+
+    /**
+     * 正则验证
+     *
+     * @param content 内容
+     * @param regExp  正则表达式
+     * @return boolean
+     */
+    public static boolean regExp(String content, String regExp) {
+        if (content == null) {
+            return false;
+        }
+        Pattern pattern = Pattern.compile(regExp);
+        Matcher matcher = pattern.matcher(content);
+        return matcher.find();
     }
 
     /**

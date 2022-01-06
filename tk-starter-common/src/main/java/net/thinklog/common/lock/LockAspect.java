@@ -55,7 +55,7 @@ public class LockAspect {
             MethodSignature methodSignature = (MethodSignature) point.getSignature();
             //获取方法参数值
             Object[] args = point.getArgs();
-            lockKey = getValBySpEL(lockKey, methodSignature, args);
+            lockKey = getValBySpel(lockKey, methodSignature, args);
         }
         DLock lockObj = null;
         try {
@@ -81,11 +81,11 @@ public class LockAspect {
     /**
      * 解析spEL表达式
      */
-    private String getValBySpEL(String spEL, MethodSignature methodSignature, Object[] args) {
+    private String getValBySpel(String spel, MethodSignature methodSignature, Object[] args) {
         //获取方法形参名数组
         String[] paramNames = nameDiscoverer.getParameterNames(methodSignature.getMethod());
         if (paramNames != null && paramNames.length > 0) {
-            Expression expression = spelExpressionParser.parseExpression(spEL);
+            Expression expression = spelExpressionParser.parseExpression(spel);
             // spring的表达式上下文对象
             EvaluationContext context = new StandardEvaluationContext();
             // 给上下文赋值

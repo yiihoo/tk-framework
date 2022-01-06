@@ -3,6 +3,9 @@ package net.thinklog.common.kit;
 import java.util.BitSet;
 import java.util.HashMap;
 
+/**
+ * @author azhao
+ */
 public class GeoHashKit {
     private static int numbits = 6 * 5; //经纬度单独编码长度
     //32位编码对应字符

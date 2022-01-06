@@ -12,13 +12,10 @@ import java.util.Date;
  *
  * @author 董华健 2012-9-7 下午1:58:46
  */
-public abstract class DateTimeKit {
+public class DateTimeKit {
 
     /**
      * 将日期格式转为long类型的日期时间格式20201019084635
-     *
-     * @param datetime
-     * @return
      */
     public static Long gmtDate(Date datetime) {
         return Long.parseLong(DateUtil.format(datetime, DatePattern.PURE_DATETIME_PATTERN));
@@ -26,9 +23,6 @@ public abstract class DateTimeKit {
 
     /**
      * long类型的日期时间格式20201019084635转为日期字符串
-     *
-     * @param datetimeLong
-     * @return
      */
     public static String getGmtDateFromLong(Long datetimeLong) {
         if (datetimeLong == null) {
@@ -37,13 +31,12 @@ public abstract class DateTimeKit {
         return DateUtil.format(DateUtil.parse(datetimeLong.toString()), DatePattern.NORM_DATETIME_FORMAT);
     }
 
+    public static Long getNowForLong() {
+        return Long.parseLong(DateUtil.format(getNow(), DatePattern.PURE_DATETIME_MS_PATTERN));
+    }
 
     public static Date getNow() {
         return new Date(System.currentTimeMillis());
-    }
-
-    public static Long getNowForLong() {
-        return Long.parseLong(DateUtil.format(getNow(), DatePattern.PURE_DATETIME_MS_PATTERN));
     }
 
     /**
@@ -70,19 +63,19 @@ public abstract class DateTimeKit {
         return todayEnd.getTime().getTime();
     }
 
-    public static String getPeriod() {
-        return getPeriod(getNow());
+    public static Integer getPeriodInt(Date payTime) {
+        return Convert.toInt(getPeriod(payTime));
     }
 
     public static String getPeriod(Date payTime) {
         return DateUtil.format(payTime, DatePattern.PURE_DATE_FORMAT);
     }
 
-    public static Integer getPeriodInt(Date payTime) {
-        return Convert.toInt(getPeriod(payTime));
-    }
-
     public static Integer getPeriodInt() {
         return Convert.toInt(getPeriod());
+    }
+
+    public static String getPeriod() {
+        return getPeriod(getNow());
     }
 }

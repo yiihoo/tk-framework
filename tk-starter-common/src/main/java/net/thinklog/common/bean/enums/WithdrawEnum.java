@@ -12,6 +12,9 @@ import java.math.BigDecimal;
  */
 @Getter
 public enum WithdrawEnum {
+    /**
+     * 支付类型
+     */
     WECHAT("微信", new BigDecimal("0.006")),
     ALIPAY("支付宝", new BigDecimal("0.006")),
     ZLB("众乐邦", new BigDecimal("0.03")),

@@ -2,6 +2,9 @@ package net.thinklog.common.kit;
 
 import java.math.BigDecimal;
 
+/**
+ * @author azhao
+ */
 public class RmbKit {
 
     /**
@@ -43,8 +46,8 @@ public class RmbKit {
      * @param numberOfMoney 输入的金额
      * @return 对应的汉语大写
      */
-    public static String RMB(BigDecimal numberOfMoney) {
-        StringBuffer sb = new StringBuffer();
+    public static String rmb(BigDecimal numberOfMoney) {
+        StringBuilder sb = new StringBuilder();
         // -1, 0, or 1 as the value of this BigDecimal is negative, zero, or
         // positive.
         int signum = numberOfMoney.signum();
@@ -71,10 +74,7 @@ public class RmbKit {
             getZero = true;
         }
         int zeroSize = 0;
-        while (true) {
-            if (number <= 0) {
-                break;
-            }
+        while (number > 0) {
             // 每次获取到最后一个数
             numUnit = (int) (number % 10);
             if (numUnit > 0) {
@@ -94,9 +94,7 @@ public class RmbKit {
                     sb.insert(0, CN_UPPER_NUMBER[numUnit]);
                 }
                 if (numIndex == 2) {
-                    if (number > 0) {
-                        sb.insert(0, CN_UPPER_MONETRAY_UNIT[numIndex]);
-                    }
+                    sb.insert(0, CN_UPPER_MONETRAY_UNIT[numIndex]);
                 } else if (((numIndex - 2) % 4 == 0) && (number % 1000 > 0)) {
                     sb.insert(0, CN_UPPER_MONETRAY_UNIT[numIndex]);
                 }

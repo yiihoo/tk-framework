@@ -300,10 +300,6 @@ public class StrKit {
         return a == null ? b == null : a.equals(b);
     }
 
-    public static String getRandomUUID() {
-        return UUID.randomUUID().toString().replace("-", "");
-    }
-
     public static boolean isEmptyList(List<String> list) {
         int n = 0;
         if (list == null || list.isEmpty()) {

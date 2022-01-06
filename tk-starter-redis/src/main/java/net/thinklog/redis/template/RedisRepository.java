@@ -58,7 +58,7 @@ public class RedisRepository {
      *
      * @param node redis 节点
      */
-    public void flushDB(RedisClusterNode node) {
+    public void flushDb(RedisClusterNode node) {
         this.redisTemplate.opsForCluster().flushDb(node);
     }
 

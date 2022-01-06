@@ -16,12 +16,12 @@ import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * 审计日志切面
@@ -74,18 +74,18 @@ public class AuditLogAspect {
     /**
      * 解析spEL表达式
      */
-    private String getValBySpEL(String spEL, MethodSignature methodSignature, Object[] args) {
+    private String getValBySpel(String spel, MethodSignature methodSignature, Object[] args) {
         //获取方法形参名数组
         String[] paramNames = nameDiscoverer.getParameterNames(methodSignature.getMethod());
         if (paramNames != null && paramNames.length > 0) {
-            Expression expression = spelExpressionParser.parseExpression(spEL);
+            Expression expression = spelExpressionParser.parseExpression(spel);
             // spring的表达式上下文对象
             EvaluationContext context = new StandardEvaluationContext();
             // 给上下文赋值
             for(int i = 0; i < args.length; i++) {
                 context.setVariable(paramNames[i], args[i]);
             }
-            return expression.getValue(context).toString();
+            return Objects.requireNonNull(expression.getValue(context)).toString();
         }
         return null;
     }
@@ -115,7 +115,7 @@ public class AuditLogAspect {
         if (operation.contains("#")) {
             //获取方法参数值
             Object[] args = joinPoint.getArgs();
-            operation = getValBySpEL(operation, methodSignature, args);
+            operation = getValBySpel(operation, methodSignature, args);
         }
         audit.setOperation(operation);
 
