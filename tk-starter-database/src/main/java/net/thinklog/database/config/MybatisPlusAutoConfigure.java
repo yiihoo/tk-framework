@@ -39,7 +39,7 @@ public class MybatisPlusAutoConfigure {
 
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnProperty(prefix = "st.mybatis-plus.auto-fill", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "tk.mybatis-plus.auto-fill", name = "enabled", havingValue = "true", matchIfMissing = true)
     public MetaObjectHandler metaObjectHandler() {
         return new DateMetaObjectHandler(autoFillProperties);
     }

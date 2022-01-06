@@ -26,7 +26,7 @@
         <redisson-starter.version>3.16.1</redisson-starter.version>
         <pagehelper.version>5.2.0</pagehelper.version>
         <druid.version>1.2.6</druid.version>
-        <hutool.version>5.5.5</hutool.version>
+        <hutool.version>5.7.18</hutool.version>
         <mybatis.version>3.5.5</mybatis.version>
         <mybatis-plus.version>3.5.0</mybatis-plus.version>
         <mybatis-plus-dynamic-datasource.version>3.5.0</mybatis-plus-dynamic-datasource.version>
@@ -36,7 +36,6 @@
         <logstash-logback.version>5.3</logstash-logback.version>
         <admin-starter-server.version>2.3.1</admin-starter-server.version>
         <knife4j.version>2.0.9</knife4j.version>
-        <nimbus-jose-jwt.version>9.12.1</nimbus-jose-jwt.version>
         <project.version>2.0.0</project.version>
         <perf4j.version>0.9.16</perf4j.version>
         <commons-io.version>2.4</commons-io.version>
@@ -49,7 +48,6 @@
         <easyexcel.verison>2.2.10</easyexcel.verison>
         <google-guava.verison>24.1.1-jre</google-guava.verison>
         <junit.version>4.13.2</junit.version>
-        <jjwt.version>0.9.1</jjwt.version>
     </properties>
     <modules>
         <module>tk-starter-common</module>
@@ -210,11 +208,6 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.nimbusds</groupId>
-                <artifactId>nimbus-jose-jwt</artifactId>
-                <version>${nimbus-jose-jwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
@@ -467,11 +460,6 @@
                 <scope>compile</scope>
             </dependency>
 
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
             <!--https://github.com/baomidou/mybatis-plus-dynamic-datasource-spring-boot-starter-->
             <dependency>
                 <groupId>com.baomidou</groupId>

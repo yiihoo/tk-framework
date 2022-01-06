@@ -41,15 +41,15 @@ public class DateMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void insertFill(MetaObject metaObject) {
-        Object createTime = getFieldValByName(autoFillProperties.getCreateTimeField(), metaObject);
-        Object updateTime = getFieldValByName(autoFillProperties.getUpdateTimeField(), metaObject);
+        Object createTime = getFieldValByName(autoFillProperties.getCreateTimeProp(), metaObject);
+        Object updateTime = getFieldValByName(autoFillProperties.getUpdateTimeProp(), metaObject);
         if (createTime == null || updateTime == null) {
             Date date = new Date();
             if (createTime == null) {
-                setFieldValByName(autoFillProperties.getCreateTimeField(), date, metaObject);
+                setFieldValByName(autoFillProperties.getCreateTimeProp(), date, metaObject);
             }
             if (updateTime == null) {
-                setFieldValByName(autoFillProperties.getUpdateTimeField(), date, metaObject);
+                setFieldValByName(autoFillProperties.getUpdateTimeProp(), date, metaObject);
             }
         }
     }
@@ -59,6 +59,6 @@ public class DateMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        setFieldValByName(autoFillProperties.getUpdateTimeField(), new Date(), metaObject);
+        setFieldValByName(autoFillProperties.getUpdateTimeProp(), new Date(), metaObject);
     }
 }

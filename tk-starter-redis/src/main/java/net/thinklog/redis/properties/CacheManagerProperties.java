@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Setter
 @Getter
-@ConfigurationProperties(prefix = "st.cache-manager")
+@ConfigurationProperties(prefix = "tk.cache-manager")
 public class CacheManagerProperties {
     private List<CacheConfig> configs;
 

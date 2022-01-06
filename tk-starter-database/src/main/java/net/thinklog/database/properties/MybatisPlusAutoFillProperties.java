@@ -32,9 +32,9 @@ public class MybatisPlusAutoFillProperties {
     /**
      * 创建时间字段名
      */
-    private String createTimeField = "create_time";
+    private String createTimeProp = "createTime";
     /**
      * 更新时间字段名
      */
-    private String updateTimeField = "update_time";
+    private String updateTimeProp = "updateTime";
 }

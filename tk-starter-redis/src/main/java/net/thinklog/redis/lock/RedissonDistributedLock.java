@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * https://gitbook.cn/gitchat/activity/5f02746f34b17609e14c7d5a
  */
 @ConditionalOnClass(RedissonClient.class)
-@ConditionalOnProperty(prefix = "st.lock", name = "lockerType", havingValue = "REDIS", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "tk.lock", name = "lockerType", havingValue = "REDIS", matchIfMissing = true)
 public class RedissonDistributedLock implements DistributedLock {
     @Resource
     private RedissonClient redissonClient;
