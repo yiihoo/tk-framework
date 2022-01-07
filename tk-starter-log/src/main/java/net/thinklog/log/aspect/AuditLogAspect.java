@@ -28,7 +28,6 @@ import java.util.Objects;
  *
  * @author azhao
  * @date 2020/2/3
-
  */
 @Slf4j
 @Aspect
@@ -82,7 +81,7 @@ public class AuditLogAspect {
             // spring的表达式上下文对象
             EvaluationContext context = new StandardEvaluationContext();
             // 给上下文赋值
-            for(int i = 0; i < args.length; i++) {
+            for (int i = 0; i < args.length; i++) {
                 context.setVariable(paramNames[i], args[i]);
             }
             return Objects.requireNonNull(expression.getValue(context)).toString();
@@ -98,7 +97,7 @@ public class AuditLogAspect {
         audit.setTimestamp(LocalDateTime.now());
         audit.setApplicationName(applicationName);
 
-        MethodSignature methodSignature = (MethodSignature)joinPoint.getSignature();
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         audit.setClassName(methodSignature.getDeclaringTypeName());
         audit.setMethodName(methodSignature.getName());
 
@@ -110,9 +109,9 @@ public class AuditLogAspect {
         audit.setUserId(userId);
         audit.setUserName(userName);
         audit.setClientId(clientId);
-
+        String varTag = "#";
         String operation = auditLog.operation();
-        if (operation.contains("#")) {
+        if (operation.contains(varTag)) {
             //获取方法参数值
             Object[] args = joinPoint.getArgs();
             operation = getValBySpel(operation, methodSignature, args);
