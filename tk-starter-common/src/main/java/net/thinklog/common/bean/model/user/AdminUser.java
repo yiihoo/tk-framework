@@ -1,10 +1,8 @@
 package net.thinklog.common.bean.model.user;
+import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +27,6 @@ public class AdminUser implements Serializable {
     private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "用户id")
-    @JsonProperty("id")
     @TableId(value = "id", type = IdType.INPUT)
     private Long id;
 
@@ -39,23 +36,15 @@ public class AdminUser implements Serializable {
     private Long shopId;
 
     @ApiModelProperty(value = "手机号")
-    @JsonProperty("mobile")
-    @TableField("mobile")
     private String mobile;
 
     @ApiModelProperty(value = "用户名")
-    @JsonProperty("username")
-    @TableField("username")
     private String username;
 
     @ApiModelProperty(value = "昵称")
-    @JsonProperty("nickname")
-    @TableField("nickname")
     private String nickname;
 
     @ApiModelProperty(value = "密码")
-    @JsonProperty("password")
-    @TableField("password")
     private String password;
 
     @ApiModelProperty(value = "角色名称")
@@ -64,24 +53,18 @@ public class AdminUser implements Serializable {
     private String roleName;
 
     @ApiModelProperty(value = "性别")
-    @JsonProperty("sex")
-    @TableField("sex")
     private String sex;
 
     @ApiModelProperty(value = "头像")
-    @JsonProperty("avatar")
-    @TableField("avatar")
     private String avatar;
 
     @ApiModelProperty(value = "备注信息")
-    @JsonProperty("remark")
-    @TableField("remark")
     private String remark;
 
     @ApiModelProperty(value = "错误次数")
-    @JsonProperty("errror_count")
-    @TableField("errror_count")
-    private Integer errrorCount;
+    @JsonProperty("error_count")
+    @TableField("error_count")
+    private Integer errorCount;
 
     @ApiModelProperty(value = "错误时间")
     @JsonProperty("error_time")
@@ -90,7 +73,7 @@ public class AdminUser implements Serializable {
 
     @ApiModelProperty(value = "创建时间")
     @JsonProperty("create_time")
-    @TableField("create_time")
+    @TableField(value = "create_time",fill = FieldFill.INSERT)
     private Date createTime;
 
     @ApiModelProperty(value = "最后登录时间")
@@ -104,8 +87,6 @@ public class AdminUser implements Serializable {
     private Date refreshTime;
 
     @ApiModelProperty(value = "帐号启用状态")
-    @JsonProperty("status")
-    @TableField("status")
     private Integer status;
 
 
