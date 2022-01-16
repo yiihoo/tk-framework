@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 /**
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  *
  * @author DELL
  */
-@ConditionalOnClass({Feign.class})
+@ConditionalOnClass({Feign.class, WebMvcConfigurer.class})
 public class FeignOnlyScanRestControllerConfig {
     @Bean
     public WebMvcRegistrations feignWebRegistrations() {

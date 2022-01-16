@@ -10,9 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.core.Ordered;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Aspect
 @Slf4j
+@ConditionalOnClass({WebMvcConfigurer.class})
 public class UserContextHolderAspect implements Ordered {
     @Around("(execution(* *..controller..*(..)))")
     public Object around(ProceedingJoinPoint point) throws Throwable {
