@@ -30,7 +30,14 @@ public interface AuthConstant {
      * 前台APP的client_id
      */
     String CLIENT_APP = "app";
-
+    /**
+     * 退出地址
+     */
+    String LOGOUT_URL = "/oauth/logout";
+    /**
+     * 注销账号前缀
+     */
+    String LOGOUT_CACHE_PREFIX = "logout:";
     /**
      * 后台管理接口路径匹配
      */
