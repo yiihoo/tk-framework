@@ -7,7 +7,10 @@ package net.thinklog.common.config;
  * @date 2020/6/19
  */
 public interface AuthConstant {
-
+    /**
+     * 超级管理员ID
+     */
+    Long SUPER_ADMIN_ID = 1L;
     /**
      * JWT存储权限前缀
      */
