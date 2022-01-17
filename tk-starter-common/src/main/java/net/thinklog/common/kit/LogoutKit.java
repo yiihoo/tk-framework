@@ -16,6 +16,7 @@ public class LogoutKit {
     public static class TokenDTO implements Serializable {
         private Integer exp;
         private String hashKey;
+        private String token;
     }
 
     /**
@@ -32,6 +33,7 @@ public class LogoutKit {
             int exp = timestamp - (int) (System.currentTimeMillis() / 1000);
             TokenDTO dto = new TokenDTO();
             dto.setExp(exp);
+            dto.setToken(realToken);
             dto.setHashKey(SecureUtil.md5(realToken));
             return dto;
         } catch (Exception e) {
