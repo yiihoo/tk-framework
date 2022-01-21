@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import net.thinklog.common.bean.enums.ErrorCodeEnum;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * 通用返回对象
@@ -28,10 +27,6 @@ public class RestResponse<T> implements Serializable {
 
     public RestResponse(T data) {
         new RestResponse<>(RestCode.SUCCESS.getCode(), RestCode.SUCCESS.getMessage(), data);
-    }
-
-    public boolean isOk() {
-        return Objects.equals(RestCode.SUCCESS.getCode(), getCode());
     }
 
     protected RestResponse(Integer code, String message, T data) {
