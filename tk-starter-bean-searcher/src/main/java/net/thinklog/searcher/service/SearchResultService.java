@@ -58,11 +58,7 @@ public class SearchResultService {
         return strings;
     }
 
-    public <T> RestPageResult<T> pageResult(Map<String, Object> params, Class<T> clazz) {
-        int pageSize = params.get("size") == null ? PAGE_SIZE : Convert.toInt(params.get("size"));
-        int pageNum = params.get("page") == null ? PAGE_NUM : Convert.toInt(params.get("page"));
-        params.put("size", pageSize);
-        params.put("page", Math.max(pageNum - 1, 0));
+    private Map<String, Object> parseParams(Map<String, Object> params) {
         //转为驼峰式
         Map<String, Object> newParams = new HashMap<>(16);
         params.forEach((key, val) -> {
@@ -77,7 +73,15 @@ public class SearchResultService {
 
             newParams.put(key, val);
         });
-        SearchResult<Map<String, Object>> searchResult = mapSearcher.search(clazz, newParams);
+        return newParams;
+    }
+
+    public <T> RestPageResult<T> pageResult(Map<String, Object> params, Class<T> clazz) {
+        int pageSize = params.get("size") == null ? PAGE_SIZE : Convert.toInt(params.get("size"));
+        int pageNum = params.get("page") == null ? PAGE_NUM : Convert.toInt(params.get("page"));
+        params.put("size", pageSize);
+        params.put("page", Math.max(pageNum - 1, 0));
+        SearchResult<Map<String, Object>> searchResult = mapSearcher.search(clazz, parseParams(params));
         List<T> dataList = new ArrayList<>();
         searchResult.getDataList().forEach(rs -> {
             //必须用JSON转，用beanSearch日期解析有问题
