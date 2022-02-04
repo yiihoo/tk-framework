@@ -31,7 +31,6 @@
         <mybatis-plus.version>3.5.0</mybatis-plus.version>
         <mybatis-plus-dynamic-datasource.version>3.5.0</mybatis-plus-dynamic-datasource.version>
         <mysql-connector.version>8.0.20</mysql-connector.version>
-        <jfinal.version>4.9.06</jfinal.version>
         <aliyun-oss.version>3.8.1</aliyun-oss.version>
         <logstash-logback.version>5.3</logstash-logback.version>
         <admin-starter-server.version>2.3.1</admin-starter-server.version>
@@ -247,11 +246,6 @@
                 <artifactId>knife4j-micro-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.jfinal</groupId>
-                <artifactId>enjoy</artifactId>
-                <version>${jfinal.version}</version>
-            </dependency>
             <!--Elastic配置-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
@@ -341,14 +335,7 @@
                 <version>3.1.0</version>
             </dependency>
             <!--[支付模块]-->
-
-            <!--支付宝-->
-            <dependency>
-                <groupId>com.alipay.sdk</groupId>
-                <artifactId>alipay-sdk-java</artifactId>
-                <version>4.9.28.ALL</version>
-            </dependency>
-            <!--微信支付 okk-->
+            <!--微信支付-->
             <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
@@ -371,7 +358,6 @@
                 <artifactId>perf4j</artifactId>
                 <version>${perf4j.version}</version>
             </dependency>
-            <!--[/发号器模块]-->
             <!--[公共模块]-->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -412,16 +398,6 @@
                 <artifactId>aliyun-java-sdk-core</artifactId>
                 <version>4.4.9</version>
             </dependency>
-            <dependency>
-                <groupId>cn.jpush.api</groupId>
-                <artifactId>jiguang-common</artifactId>
-                <version>1.1.4</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.jpush.api</groupId>
-                <artifactId>jpush-client</artifactId>
-                <version>3.3.10</version>
-            </dependency>
             <!--[/Portal模块]-->
             <!--shop-->
             <dependency>
@@ -452,7 +428,6 @@
                 <artifactId>guava</artifactId>
                 <version>${google-guava.verison}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.github.whvcse</groupId>
                 <artifactId>easy-captcha</artifactId>
