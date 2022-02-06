@@ -25,7 +25,7 @@
         <spring-boot.version>2.5.8</spring-boot.version>
         <redisson-starter.version>3.16.1</redisson-starter.version>
         <pagehelper.version>5.2.0</pagehelper.version>
-        <druid.version>1.2.6</druid.version>
+        <druid.version>1.2.8</druid.version>
         <hutool.version>5.7.18</hutool.version>
         <mybatis.version>3.5.5</mybatis.version>
         <mybatis-plus.version>3.5.0</mybatis-plus.version>
@@ -35,7 +35,7 @@
         <logstash-logback.version>5.3</logstash-logback.version>
         <admin-starter-server.version>2.3.1</admin-starter-server.version>
         <knife4j.version>2.0.9</knife4j.version>
-        <project.version>2.0.0</project.version>
+        <tk.version>2.0.0</tk.version>
         <perf4j.version>0.9.16</perf4j.version>
         <commons-io.version>2.4</commons-io.version>
         <spring-data-elasticsearch.version>4.1.8</spring-data-elasticsearch.version>
@@ -128,67 +128,67 @@
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-redis</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-db-starter模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-database</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-excel-starter模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-excel</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-starter-log模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-log</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-starter-ribbon模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-loadbalancer</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-starter-sentinel模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-sentinel</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-starter-notify模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-notify</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-swagger2-starter模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-swagger</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-common-starter模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-common</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-feign-starter模块-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-feign</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--tk-bean-searcher-->
             <dependency>
                 <groupId>net.thinklog</groupId>
                 <artifactId>tk-starter-bean-searcher</artifactId>
-                <version>${project.version}</version>
+                <version>${tk.version}</version>
             </dependency>
             <!--集成druid连接池-->
             <dependency>
@@ -245,27 +245,6 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-micro-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
-            </dependency>
-            <!--Elastic配置-->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-elasticsearch</artifactId>
-                <version>${spring-data-elasticsearch.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.elasticsearch.client</groupId>
-                <artifactId>elasticsearch-rest-high-level-client</artifactId>
-                <version>${elasticsearch.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.elasticsearch.client</groupId>
-                <artifactId>elasticsearch-rest-client</artifactId>
-                <version>${elasticsearch.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.elasticsearch</groupId>
-                <artifactId>elasticsearch</artifactId>
-                <version>${elasticsearch.version}</version>
             </dependency>
             <!--解决jar包冲突-->
             <dependency>
