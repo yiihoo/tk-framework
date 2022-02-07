@@ -20,6 +20,7 @@ public class LoginUserDTO implements Serializable {
     private Long id;
     private String name;
     private Integer platformId;
+    private Long tenantId;
     private String mobile;
     private Integer status;
     private String clientId;

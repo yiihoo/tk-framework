@@ -22,9 +22,9 @@ public class FeignInterceptorConfig {
     public RequestInterceptor baseFeignInterceptor() {
         return template -> {
             //传递client
-            String tenant = TenantContextHolder.getTenant();
-            if (StrUtil.isNotEmpty(tenant)) {
-                template.header(AuthConstant.TENANT_HEADER, tenant);
+            Long tenant = TenantContextHolder.getTenant();
+            if (tenant!=null) {
+                template.header(AuthConstant.TENANT_HEADER, tenant+"");
             }
             //设置平台ID
             String platformId = PlatformContextHolder.getPlatformId().toString();

@@ -27,9 +27,9 @@ public class TenantAutoConfigure {
         return new TenantLineHandler() {
             @Override
             public Expression getTenantId() {
-                String tenant = TenantContextHolder.getTenant();
+                Long tenant = TenantContextHolder.getTenant();
                 if (tenant != null) {
-                    return new StringValue(TenantContextHolder.getTenant());
+                    return new StringValue(TenantContextHolder.getTenant()+"");
                 }
                 return new NullValue();
             }
