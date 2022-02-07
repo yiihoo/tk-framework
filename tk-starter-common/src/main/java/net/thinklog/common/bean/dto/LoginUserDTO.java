@@ -17,12 +17,12 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 public class LoginUserDTO implements Serializable {
-    private Long id;
-    private String name;
-    private Integer platformId;
-    private Long tenantId;
-    private String mobile;
-    private Integer status;
-    private String clientId;
-    private List<String> roles;
+  private Long id;
+  private String name;
+  private String avatar;
+  private Integer platformId;
+  private Long tenantId;
+  private String mobile;
+  private String clientId;
+  private List<String> roles;
 }
