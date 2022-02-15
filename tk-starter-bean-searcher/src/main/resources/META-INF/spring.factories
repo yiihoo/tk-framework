@@ -1,3 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-net.thinklog.searcher.boot.BeanSearcherAutoConfiguration,\
 net.thinklog.searcher.service.SearchResultService
