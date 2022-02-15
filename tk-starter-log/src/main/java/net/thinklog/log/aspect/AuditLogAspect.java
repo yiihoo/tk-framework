@@ -6,7 +6,6 @@ import net.thinklog.log.model.Audit;
 import net.thinklog.log.properties.AuditLogProperties;
 import net.thinklog.log.service.IAuditService;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +29,6 @@ import java.util.Objects;
  * @date 2020/2/3
  */
 @Slf4j
-@Aspect
 @ConditionalOnClass({HttpServletRequest.class, RequestContextHolder.class})
 public class AuditLogAspect {
     @Value("${spring.application.name}")

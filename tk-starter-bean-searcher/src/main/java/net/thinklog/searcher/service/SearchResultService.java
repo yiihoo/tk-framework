@@ -2,12 +2,11 @@ package net.thinklog.searcher.service;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.text.CharSequenceUtil;
-import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.ejlchina.searcher.MapSearcher;
 import com.ejlchina.searcher.SearchResult;
+import com.ejlchina.searcher.boot.BeanSearcherProperties;
 import net.thinklog.common.api.RestPageResult;
-import net.thinklog.searcher.boot.BeanSearcherProperties;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

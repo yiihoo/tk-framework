@@ -1,10 +1,9 @@
 package net.thinklog.log.trace;
 
+import cn.hutool.core.util.StrUtil;
 import net.thinklog.log.properties.TraceProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.annotation.Resource;
@@ -20,7 +19,6 @@ import java.io.IOException;
  * @author azhao
  * @date 2020/10/14
  */
-@Component
 @ConditionalOnClass(value = {HttpServletRequest.class, OncePerRequestFilter.class})
 @Order(value = MDCTraceUtils.FILTER_ORDER)
 public class WebTraceFilter extends OncePerRequestFilter {
@@ -38,7 +36,7 @@ public class WebTraceFilter extends OncePerRequestFilter {
         try {
             String traceId = request.getHeader(MDCTraceUtils.TRACE_ID_HEADER);
             String spanId = request.getHeader(MDCTraceUtils.SPAN_ID_HEADER);
-            if (StringUtils.hasText(traceId)) {
+            if (StrUtil.isBlank(traceId)) {
                 MDCTraceUtils.addTrace();
             } else {
                 MDCTraceUtils.putTrace(traceId, spanId);

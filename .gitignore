@@ -35,3 +35,4 @@ logs/
 .classpath
 .project
 .DS_Store
+.flattened-pom.xml
